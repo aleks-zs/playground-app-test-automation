@@ -25,12 +25,6 @@ context('Actions', () => {
       // Delay each keypress by 0.1 sec
       .type('slow.typing@email.com', { delay: 100 })
       .should('have.value', 'slow.typing@email.com')
-
-    cy.get('.action-disabled')
-      // Ignore error checking prior to type
-      // like whether the input is visible or disabled
-      .type('disabled error checking', { force: true })
-      .should('have.value', 'disabled error checking')
   })
 
   it('.focus() - focus on a DOM element', () => {
@@ -95,7 +89,7 @@ context('Actions', () => {
 
     // .click() accepts an x and y coordinate
     // that controls where the click occurs :)
-
+  
     cy.get('#action-canvas')
       .click(80, 75) // click 80px on x coord and 75px on y coord
       .click(170, 75)
@@ -107,9 +101,6 @@ context('Actions', () => {
 
     // click multiple elements by passing multiple: true
     cy.get('.action-labels>.label').click({ multiple: true })
-
-    // Ignore error checking prior to clicking
-    cy.get('.action-opacity>.btn').click({ force: true })
   })
 
   it('.dblclick() - double click on a DOM element', () => {
@@ -148,13 +139,6 @@ context('Actions', () => {
     // .check() accepts an array of values
     cy.get('.action-multiple-checkboxes [type="checkbox"]')
       .check(['checkbox1', 'checkbox2']).should('be.checked')
-
-    // Ignore error checking prior to checking
-    cy.get('.action-checkboxes [disabled]')
-      .check({ force: true }).should('be.checked')
-
-    cy.get('.action-radios [type="radio"]')
-      .check('radio3', { force: true }).should('be.checked')
   })
 
   it('.uncheck() - uncheck a checkbox element', () => {

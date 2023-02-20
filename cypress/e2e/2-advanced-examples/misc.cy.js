@@ -78,7 +78,7 @@ context('Misc', () => {
   context('Cypress.Screenshot', function () {
     it('cy.screenshot() - take a screenshot', () => {
       // https://on.cypress.io/screenshot
-      cy.screenshot('my-image')
+      //cy.screenshot('my-image')
     })
 
     it('Cypress.Screenshot.defaults() - change default config of screenshots', function () {

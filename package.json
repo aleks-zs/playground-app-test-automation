@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "lint": "eslint cypress"
   },
   "author": "az",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.5.1"
+    "cypress": "^12.5.1",
+    "eslint-plugin-cypress": "^2.12.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0"
   }
 }
