@@ -3,8 +3,16 @@ name: Checks
 
 on: [push]
 jobs:
+  runs-on: ubuntu-22.04
+  eslint:
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx,.ts,.tsx
+
   cypress-run:
-    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
